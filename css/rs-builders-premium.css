@@ -1,0 +1,492 @@
+/**
+ * RS BUILDERS - Premium Design & Presentation Stylesheet
+ * Head Office: Siddipet | Phone: 9618972105
+ * 
+ * Elevates the visual presentation with state-of-the-art modern typography,
+ * curated vibrant color palettes, glassmorphism, glowing micro-animations, and responsive cards.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --rs-primary: #f97316;
+  --rs-primary-dark: #ea580c;
+  --rs-primary-light: #fff7ed;
+  --rs-accent: #ffedd5;
+  --rs-dark: #0f172a;
+  --rs-dark-card: #1e293b;
+  --rs-text: #334155;
+  --rs-text-light: #64748b;
+  --rs-bg-light: #f8fafc;
+  --rs-white: #ffffff;
+  --rs-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --rs-shadow-md: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --rs-shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.05);
+  --rs-shadow-glow: 0 10px 25px -5px rgba(249, 115, 22, 0.4);
+  --rs-radius-sm: 8px;
+  --rs-radius-md: 12px;
+  --rs-radius-lg: 16px;
+  --rs-radius-xl: 24px;
+}
+
+/* ==========================================
+   1. GLOBAL TYPOGRAPHY & RESET OVERRIDES
+   ========================================== */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: var(--rs-text) !important;
+  background-color: var(--rs-bg-light) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .heading, .navbar-brand {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--rs-dark) !important;
+}
+
+/* ==========================================
+   2. TOP CONTACT BAR & HEADER POLISH
+   ========================================== */
+.py-1.top {
+  background: var(--rs-dark) !important;
+  color: #cbd5e1 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+}
+
+.py-1.top .text {
+  color: #cbd5e1 !important;
+}
+
+.py-1.top a {
+  color: #f1f5f9 !important;
+  transition: color 0.3s ease;
+}
+
+.py-1.top a:hover {
+  color: var(--rs-primary) !important;
+}
+
+.pt-4.pb-5 {
+  background: var(--rs-white) !important;
+  box-shadow: var(--rs-shadow-sm);
+}
+
+.topper .icon {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: var(--rs-primary-light) !important;
+  color: var(--rs-primary) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 20px !important;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15) !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.topper:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--rs-primary) !important;
+  color: #fff !important;
+}
+
+.topper .con span:first-child {
+  font-weight: 700;
+  color: var(--rs-dark);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.topper .con {
+  font-weight: 600;
+  color: var(--rs-text);
+  margin-bottom: 0 !important;
+}
+
+.topper .cms-phone, .topper .cms-location {
+  color: var(--rs-primary-dark) !important;
+  font-weight: 700 !important;
+}
+
+/* ==========================================
+   3. SLEEK NAVIGATION BAR
+   ========================================== */
+.ftco-navbar-light {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08) !important;
+  border-top: 1px solid #f1f5f9 !important;
+  padding: 12px 0 !important;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  color: var(--rs-dark) !important;
+  padding: 10px 18px !important;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background: var(--rs-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link:hover {
+  color: var(--rs-primary) !important;
+}
+
+.navbar-nav .nav-item.active .nav-link::after,
+.navbar-nav .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================
+   4. HERO SECTION WITH RICH AESTHETICS
+   ========================================== */
+.hero-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-wrap .overlay {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 41, 59, 0.82) 55%, rgba(234, 88, 12, 0.50) 100%) !important;
+  opacity: 1 !important;
+}
+
+.hero-wrap .slider-text h1 {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 3.8rem !important;
+  line-height: 1.15 !important;
+  color: #ffffff !important;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 24px !important;
+}
+
+.hero-wrap .slider-text p {
+  font-size: 1.25rem !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  max-width: 620px;
+  font-weight: 400;
+  line-height: 1.7;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Premium Buttons */
+.btn {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: var(--rs-radius-sm) !important;
+  padding: 14px 28px !important;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.btn-primary, .btn-custom {
+  background: linear-gradient(135deg, var(--rs-primary) 0%, var(--rs-primary-dark) 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: var(--rs-shadow-glow) !important;
+}
+
+.btn-primary:hover, .btn-custom:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 15px 30px -5px rgba(234, 88, 12, 0.6) !important;
+}
+
+.btn-white {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-white:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  transform: translateY(-3px) !important;
+  color: #fff !important;
+}
+
+/* ==========================================
+   5. FEATURE BOXES (UNDER HERO) & SERVICES
+   ========================================== */
+.ftco-services-2 {
+  margin-top: -60px;
+  position: relative;
+  z-index: 10;
+}
+
+.ftco-services-2 .services,
+.block-6.services {
+  background: var(--rs-white) !important;
+  border-radius: var(--rs-radius-lg) !important;
+  padding: 40px 32px !important;
+  box-shadow: var(--rs-shadow-md) !important;
+  border: 1px solid #f1f5f9 !important;
+  border-top: 4px solid var(--rs-primary) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  height: 100%;
+}
+
+.ftco-services-2 .services:hover,
+.block-6.services:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: var(--rs-shadow-lg), 0 0 30px rgba(249, 115, 22, 0.15) !important;
+  border-color: #fed7aa !important;
+}
+
+.services .icon {
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: var(--rs-radius-md) !important;
+  background: var(--rs-primary-light) !important;
+  color: var(--rs-primary) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 32px !important;
+  margin-bottom: 24px !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.services:hover .icon {
+  background: linear-gradient(135deg, var(--rs-primary) 0%, var(--rs-primary-dark) 100%) !important;
+  color: #fff !important;
+  transform: scale(1.1) rotate(8deg);
+  box-shadow: var(--rs-shadow-glow);
+}
+
+.services .heading {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--rs-dark) !important;
+  margin-bottom: 12px !important;
+}
+
+.services p {
+  color: var(--rs-text-light) !important;
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   6. SECTION HEADINGS & SUBHEADINGS
+   ========================================== */
+.subheading {
+  color: var(--rs-primary) !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 2.5px !important;
+  text-transform: uppercase !important;
+  background: var(--rs-primary-light);
+  padding: 6px 18px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 16px !important;
+  border: 1px solid #fed7aa;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.1);
+}
+
+.heading-section h2 {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 2.6rem !important;
+  color: var(--rs-dark) !important;
+  letter-spacing: -0.5px;
+}
+
+/* ==========================================
+   7. PROJECT PORTFOLIO SHOWCASE
+   ========================================== */
+.project, .project-wrap {
+  border-radius: var(--rs-radius-lg) !important;
+  overflow: hidden !important;
+  box-shadow: var(--rs-shadow-md) !important;
+  background: var(--rs-white) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  border: 1px solid #f1f5f9;
+  position: relative;
+}
+
+.project:hover, .project-wrap:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: var(--rs-shadow-lg) !important;
+}
+
+.project .img, .project-wrap .img {
+  height: 320px !important;
+  display: block !important;
+  background-size: cover !important;
+  background-position: center !important;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  position: relative;
+}
+
+.project:hover .img, .project-wrap:hover .img {
+  transform: scale(1.08) !important;
+}
+
+.project .img::after, .project-wrap .img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0) 60%);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.project:hover .img::after, .project-wrap:hover .img::after {
+  opacity: 0.95;
+}
+
+.project .text, .project-wrap .text {
+  padding: 24px !important;
+  background: var(--rs-white) !important;
+  position: relative;
+  z-index: 2;
+}
+
+.project .text h3, .project-wrap .text h3 {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+.project .text h3 a, .project-wrap .text h3 a {
+  color: var(--rs-dark) !important;
+  transition: color 0.3s ease;
+}
+
+.project .text h3 a:hover, .project-wrap .text h3 a:hover {
+  color: var(--rs-primary) !important;
+}
+
+.project .text p, .project-wrap .text .location {
+  color: var(--rs-text-light) !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.project .text p .fa, .project-wrap .text .location .fa {
+  color: var(--rs-primary);
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+/* ==========================================
+   8. COUNTER / WHY CHOOSE US & CTA BANNERS
+   ========================================== */
+.ftco-counter .aside-stretch {
+  background: linear-gradient(135deg, var(--rs-dark) 0%, var(--rs-dark-card) 100%) !important;
+  border-radius: var(--rs-radius-lg);
+  box-shadow: var(--rs-shadow-lg);
+}
+
+.ftco-counter .block-18 {
+  background: var(--rs-white) !important;
+  border-radius: var(--rs-radius-lg) !important;
+  padding: 30px !important;
+  box-shadow: var(--rs-shadow-md) !important;
+  border: 1px solid #f1f5f9;
+  transition: transform 0.3s ease;
+}
+
+.ftco-counter .block-18:hover {
+  transform: translateY(-5px);
+  border-color: #fed7aa;
+}
+
+.ftco-counter .block-18 .icon {
+  width: 65px !important;
+  height: 65px !important;
+  border-radius: var(--rs-radius-md) !important;
+  background: var(--rs-primary-light) !important;
+  color: var(--rs-primary) !important;
+  font-size: 28px !important;
+}
+
+.ftco-counter .block-18 .number {
+  color: var(--rs-primary) !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 2.5rem !important;
+}
+
+.ftco-intro .img {
+  border-radius: var(--rs-radius-xl) !important;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--rs-shadow-lg);
+}
+
+.ftco-intro .overlay {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(234, 88, 12, 0.75) 100%) !important;
+}
+
+/* ==========================================
+   9. FLOATING CONTACT / WHATSAPP BADGE
+   ========================================== */
+.rs-floating-contact {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #fff !important;
+  padding: 12px 22px;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 2px solid #fff;
+}
+
+.rs-floating-contact:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+  color: #fff !important;
+}
+
+.rs-floating-contact i {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .hero-wrap .slider-text h1 {
+    font-size: 2.6rem !important;
+  }
+  .rs-floating-contact span {
+    display: none;
+  }
+  .rs-floating-contact {
+    padding: 14px;
+    border-radius: 50%;
+  }
+}
